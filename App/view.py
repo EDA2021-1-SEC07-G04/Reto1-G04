@@ -37,7 +37,10 @@ operación solicitada
 def printMenu():
     print("Bienvenido")
     print("1- Cargar información en el catálogo")
-    print("2- ")
+    print("2-Videos de mayor tendencia en un país segun la categoría ")
+    print("3-Video de mayor duración como tendencia  según el país")
+    print("4-Video de mayor duración como tendencia según la categoría")
+    print("5-Videos con mayor cantidad de likes según el país")
 
 catalog = None
 
@@ -49,7 +52,7 @@ while True:
     inputs = input('Seleccione una opción para continuar\n')
     if int(inputs[0]) == 1:
         print("Cargando información de los archivos ....")
-
+        
     elif int(inputs[0]) == 2:
         pass
 
