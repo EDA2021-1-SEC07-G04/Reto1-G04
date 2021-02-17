@@ -36,10 +36,18 @@ los mismos.
 """
 
 # Construccion de modelos
+def CatalNuevo ():
+    catalogo={"videos": None,"categorias":None}
+    catalogo["videos"]=lt.newList()
+    catalogo["categorias"]=lt.newList("ARRAY_LIST")
+
 
 # Funciones para agregar informacion al catalogo
 
 # Funciones para creacion de datos
+
+def addVideo():
+    video={"titulo":"","titulo canal":"","fecha tendencia":"","pais":"","reproducciones":"","likes":"","dislikes":""}
 
 # Funciones de consulta
 
