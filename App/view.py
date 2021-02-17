@@ -43,6 +43,16 @@ def printMenu():
     print("5-Videos con mayor cantidad de likes según el país")
 
 catalog = None
+def iniciar_catalogo():
+    """
+    Inicializa el catalogo de libros
+    """
+    return controller.iniciar_catalog()
+def CargarDatos(catalog):
+    """
+    Carga los libros en la estructura de datos
+    """
+    controller.dataLoad(catalog)    
 
 """
 Menu principal
