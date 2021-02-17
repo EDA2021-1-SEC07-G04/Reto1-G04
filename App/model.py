@@ -36,19 +36,35 @@ los mismos.
 """
 
 # Construccion de modelos
-def CatalNuevo ():
-    catalogo={"videos": None,"categorias":None}
-    catalogo["videos"]=lt.newList()
-    catalogo["categorias"]=lt.newList("ARRAY_LIST")
-
+def CatalNuevo():
+    catalog={"videos": None,"categorias":None}
+    catalog["videos"]=lt.newList()
+    catalog["categorias"]=lt.newList("ARRAY_LIST")
+    return catalog
 
 # Funciones para agregar informacion al catalogo
 
+"""def addVideo(catalog, video):
+    lt.addLast(catalog['books'], book)
+ """   
+def addCateg(catalog, categ):
+    """
+    Adiciona una categoria a la lista de categorias
+    """
+    print(categ.keys())
+    c = newCateg(categ['name'], categ['id'])
+    lt.addLast(catalog['categorias'], c)
+
 # Funciones para creacion de datos
 
-def addVideo():
-    video={"titulo":"","titulo canal":"","fecha tendencia":"","pais":"","reproducciones":"","likes":"","dislikes":""}
-
+def newCateg(name, id):
+    """
+    Esta estructura almancena las categorias utilizadas para los videos.
+    """
+    categ = {'name': '', 'categ_id': ''}
+    categ['name'] = name
+    categ['categ_id'] = id
+    return categ
 # Funciones de consulta
 
 # Funciones utilizadas para comparar elementos dentro de una lista
