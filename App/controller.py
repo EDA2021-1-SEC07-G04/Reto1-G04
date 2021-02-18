@@ -71,12 +71,6 @@ def loadCategorias(catalog):
         model.addCateg(catalog, categ)
 
 
-def loadVideo(catalog):
-    vfile = cf.data_dir + "videos-small.csv"
-    input_file= csv.DictReader(open(vfile, encoding="utf-8"))
-    for video in input_file:
-     print(video)
-     model.addVideo(catalog, video)    
 # Funciones de ordenamiento
 
 # Funciones de consulta sobre el catálogo
