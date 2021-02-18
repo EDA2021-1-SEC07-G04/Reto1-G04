@@ -35,7 +35,19 @@ def iniciar_catalog():
     return catalog
 
 # Funciones para la carga de datos
+def loadData(catalog):
+    """
+    Carga los datos de los archivos y cargar los datos en la
+    estructura de datos
+    """
+    loadVideo(catalog)
 
+def loadVideo(catalog):
+    vfile = cf.data_dir + "videos-small.csv"
+    input_file= csv.DictReader(open(vfile, encoding="utf-8"))
+    for video in input_file:
+     print(video)
+     model.addVideo(catalog, video)    
 # Funciones de ordenamiento
 
 # Funciones de consulta sobre el catálogo

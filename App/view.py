@@ -52,7 +52,7 @@ def CargarDatos(catalog):
     """
     Carga los libros en la estructura de datos
     """
-    controller.dataLoad(catalog)    
+    controller.loadData(catalog)    
 
 """
 Menu principal

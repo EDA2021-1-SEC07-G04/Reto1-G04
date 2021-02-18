@@ -37,17 +37,19 @@ los mismos.
 
 # Construccion de modelos
 def CatalNuevo ():
-    catalogo={"videos": None,"categorias":None}
-    catalogo["videos"]=lt.newList()
-    catalogo["categorias"]=lt.newList("ARRAY_LIST")
+    catalog={"videos": None,"categorias":None}
+    catalog["videos"]=lt.newList()
+    catalog["categorias"]=lt.newList("SINGLE_LINKED")
+    return catalog
 
 
 # Funciones para agregar informacion al catalogo
 
 # Funciones para creacion de datos
 
-def addVideo():
-    video={"titulo":"","titulo canal":"","fecha tendencia":"","pais":"","reproducciones":"","likes":"","dislikes":""}
+def addVideo(catalog, video):
+    lt.addLast(catalog["videos"],video)
+
 
 # Funciones de consulta
 
