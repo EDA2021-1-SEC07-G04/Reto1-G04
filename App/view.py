@@ -63,6 +63,7 @@ while True:
         print("Cargando información de los archivos ....")
         catalog=initCatalog()
         loadData(catalog)
+        print('Videos cargados: ' + str(lt.size(catalog['videos'])))
         print('Categorias cargadas: ' + str(lt.size(catalog['categorias'])))
     elif int(inputs[0]) == 2:
         pass

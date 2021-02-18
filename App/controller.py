@@ -43,7 +43,7 @@ def startData(catalog):
     Carga los datos de los archivos y cargar los datos en la
     estructura de datos
     """
-    #loadVideos(catalog)
+    loadVideos(catalog)
     loadCategorias(catalog)
     
 
@@ -53,9 +53,10 @@ def loadVideos(catalog):
     cada uno de ellos, se crea en la lista de autores, a dicho autor y una
     referencia al libro que se esta procesando.
     """
-    videosfile = cf.data_dir + 'Data/videos-small.csv'
+    videosfile = cf.data_dir + 'videos-large.csv'
     input_file = csv.DictReader(open(videosfile, encoding='utf-8'))
     for video in input_file:
+        #print(video)
         model.addVideo(catalog, video)
 
 
@@ -64,9 +65,9 @@ def loadCategorias(catalog):
     Carga todas las categorias del archivo y las agrega a la lista de categorias
     """
     categfile = cf.data_dir + 'category-id.csv'
-    input_file = csv.DictReader(open(categfile, encoding='utf-8')).delimiter='\t'
+    input_file = csv.DictReader(open(categfile, encoding='utf-8'), delimiter='\t')
     for categ in input_file:
-        print(categ)
+        #print(categ)
         model.addCateg(catalog, categ)
 
 

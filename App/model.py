@@ -44,14 +44,13 @@ def CatalNuevo():
 
 # Funciones para agregar informacion al catalogo
 
-"""def addVideo(catalog, video):
-    lt.addLast(catalog['books'], book)
- """   
+def addVideo(catalog, video):
+    lt.addLast(catalog['videos'], video)
+   
 def addCateg(catalog, categ):
     """
     Adiciona una categoria a la lista de categorias
     """
-    print(categ.keys())
     c = newCateg(categ['name'], categ['id'])
     lt.addLast(catalog['categorias'], c)
 
