@@ -71,10 +71,10 @@ def loadCategorias(catalog):
 
 
 # Funciones de ordenamiento
-def videoSort(catalog, size):
+def videoSort(catalog, size,tiposort):
     """
     Ordena los libros por average_rating
     """
-    return model.sortVideos(catalog, size)
+    return model.sortVideos(catalog, size,tiposort)
 
 # Funciones de consulta sobre el catálogo

@@ -28,6 +28,8 @@
 import config as cf
 from DISClib.ADT import list as lt
 from DISClib.Algorithms.Sorting import shellsort as sa
+from DISClib.Algorithms.Sorting import insertionsort as insort
+from DISClib.Algorithms.Sorting import selectionsort as selsort
 assert cf
 
 """
@@ -77,8 +79,13 @@ def cmpVideosByViews(video1, video2):
   return x 
 
 # Funciones de ordenamiento
-def sortBooks(catalog, size):
+def sortVideos(catalog, size,tiposort):
     sub_list = lt.subList(catalog['videos'], 0, size)
     sub_list = sub_list.copy()
-    sorted_list = sa.sort(sub_list, cmpVideosByViews)
+    if tiposort == "shellsort":
+     sorted_list = sa.sort(sub_list, cmpVideosByViews)
+    elif tiposort == "insertionsort":
+     sorted_list = insort.sort(sub_list, cmpVideosByViews)
+    elif tiposort == "selectionsort":
+     sorted_list= selsort.sort(sub_list, cmpVideosByViews)        
     return  sorted_list
