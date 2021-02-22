@@ -80,12 +80,13 @@ def cmpVideosByViews(video1, video2):
 
 # Funciones de ordenamiento
 def sortVideos(catalog, size,tiposort):
+    sorted_list=[]
     sub_list = lt.subList(catalog['videos'], 0, size)
     sub_list = sub_list.copy()
-    if tiposort == "shellsort":
+    if tiposort == 1:
      sorted_list = sa.sort(sub_list, cmpVideosByViews)
-    elif tiposort == "insertionsort":
+    elif tiposort == 2:
      sorted_list = insort.sort(sub_list, cmpVideosByViews)
-    elif tiposort == "selectionsort":
+    elif tiposort == 3:
      sorted_list= selsort.sort(sub_list, cmpVideosByViews)        
     return  sorted_list
