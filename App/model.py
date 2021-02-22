@@ -54,8 +54,6 @@ def addCateg(catalog, categ):
     c = newCateg(categ['name'], categ['id'])
     lt.addLast(catalog['categorias'], c)
 
-def addVideo(catalog, video):
-    lt.addLast(catalog["videos"],video)
 
 
 def newCateg(name, id):
@@ -69,5 +67,18 @@ def newCateg(name, id):
 # Funciones de consulta
 
 # Funciones utilizadas para comparar elementos dentro de una lista
+def cmpVideosByViews(video1, video2):
+ x=None
+ if (float(video1['views']) < float(video2['views'])):
+  x=True
+  return x 
+ else:
+  x=False
+  return x 
 
 # Funciones de ordenamiento
+def sortBooks(catalog, size):
+    sub_list = lt.subList(catalog['videos'], 0, size)
+    sub_list = sub_list.copy()
+    sorted_list = sa.sort(sub_list, cmpVideosByViews)
+    return  sorted_list
