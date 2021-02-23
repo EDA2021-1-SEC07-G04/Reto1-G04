@@ -26,6 +26,7 @@
 
 
 import config as cf
+import time
 from DISClib.ADT import list as lt
 from DISClib.Algorithms.Sorting import shellsort as sa
 from DISClib.Algorithms.Sorting import insertionsort as insort
@@ -83,10 +84,15 @@ def sortVideos(catalog, size,tiposort):
     sorted_list=[]
     sub_list = lt.subList(catalog['videos'], 0, size)
     sub_list = sub_list.copy()
+    start_time = time.process_time()
     if tiposort == 1:
      sorted_list = sa.sort(sub_list, cmpVideosByViews)
     elif tiposort == 2:
      sorted_list = insort.sort(sub_list, cmpVideosByViews)
-    elif tiposort == 3:
-     sorted_list= selsort.sort(sub_list, cmpVideosByViews)        
-    return  sorted_list
+    elif tiposort == 3:       
+     sorted_list= selsort.sort(sub_list, cmpVideosByViews)
+    stop_time = time.process_time() 
+    msegtime = (stop_time - start_time)*1000
+ 
+        
+    return  msegtime,sorted_list

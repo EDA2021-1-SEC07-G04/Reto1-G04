@@ -70,7 +70,10 @@ while True:
         tamaño=int(input("Indique el tamaño de la muestra a analizar"))
         tiposort=int(input("Indique 1 para shellsort,2 para insertionsort,3 para selectionsort"))
         result=controller.videoSort(catalog,tamaño,tiposort)
-        print(result)
+        print("mensaje de confirmacion")
+        print(result[0])
+        print(result[1]["type"])
+
         pass
 
     else:
