@@ -68,12 +68,12 @@ while True:
         print('Categorias cargadas: ' + str(lt.size(catalog['categorias'])))
     elif int(inputs[0]) == 2:
         tamaño=int(input("Indique el tamaño de la muestra a analizar"))
-        tiposort=int(input("Indique 1 para shellsort,2 para insertionsort,3 para selectionsort"))
+        tiposort=int(input("Indique 1 para shellsort,2 para insertionsort,3 para selectionsort, 4 para mergesort, 5 para quicksort."))
         result=controller.videoSort(catalog,tamaño,tiposort)
         print("mensaje de confirmacion")
         
         print(result[0])
-        print(result[1]["elements"])
+        #print(result[1]["elements"])
 
         pass
 
