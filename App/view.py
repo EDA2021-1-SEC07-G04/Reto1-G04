@@ -71,8 +71,9 @@ while True:
         tiposort=int(input("Indique 1 para shellsort,2 para insertionsort,3 para selectionsort"))
         result=controller.videoSort(catalog,tamaño,tiposort)
         print("mensaje de confirmacion")
+        
         print(result[0])
-        print(result[1]["type"])
+        print(result[1]["elements"])
 
         pass
 

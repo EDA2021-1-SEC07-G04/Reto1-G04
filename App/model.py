@@ -41,7 +41,7 @@ los mismos.
 # Construccion de modelos
 def CatalNuevo():
     catalog={"videos": None,"categorias":None}
-    catalog["videos"]=lt.newList()
+    catalog["videos"]=lt.newList("ARRAY_LIST")
     catalog["categorias"]=lt.newList("ARRAY_LIST")
     return catalog
 
