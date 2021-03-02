@@ -96,3 +96,6 @@ def sortVideos(catalog, size,tiposort):
  
         
     return  msegtime,sorted_list
+
+
+    

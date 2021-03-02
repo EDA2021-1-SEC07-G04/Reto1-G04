@@ -66,14 +66,22 @@ while True:
         print(lt.lastElement(catalog["videos"]))
         print('Videos cargados: ' + str(lt.size(catalog['videos'])))
         print('Categorias cargadas: ' + str(lt.size(catalog['categorias'])))
+        print(catalog["categorias"])
+        
     elif int(inputs[0]) == 2:
         tamaño=int(input("Indique el tamaño de la muestra a analizar"))
         tiposort=int(input("Indique 1 para shellsort,2 para insertionsort,3 para selectionsort"))
+        pais=input("Introduzca un país a analizar")
+        categoriaa=input("Introduzca el ID de una categoría a analizar")
         result=controller.videoSort(catalog,tamaño,tiposort)
         print("mensaje de confirmacion")
+        for i in range(0,len(result[1]["elements"])):
+            if result[1]["elements"][i]["country"] == pais and result[1]["elements"][i]["category_id"] == categoriaa:
+                print(result[1]["elements"][i]["trending_date"],result[1]["elements"][i]["title"],result[1]["elements"][i]["channel_title"],result[1]["elements"][i]["publish_time"],result[1]["elements"][i]["views"],result[1]["elements"][i]["likes"],result[1]["elements"][i]["dislikes"])
         
         print(result[0])
-        print(result[1]["elements"])
+       # print(result[1]["elements"][0:2])
+       
 
         pass
 
