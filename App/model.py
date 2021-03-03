@@ -24,7 +24,7 @@
  * Dario Correal - Version inicial
  """
 
-
+import collections
 import config as cf
 import time
 from DISClib.ADT import list as lt
@@ -77,7 +77,9 @@ def cmpVideosByViews(video1, video2):
   return x 
  else:
   x=False
-  return x 
+  return x
+
+
 
 # Funciones de ordenamiento
 def sortVideos(catalog, size,tiposort):
@@ -98,4 +100,3 @@ def sortVideos(catalog, size,tiposort):
     return  msegtime,sorted_list
 
 
-    
