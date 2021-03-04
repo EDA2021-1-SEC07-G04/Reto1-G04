@@ -116,4 +116,7 @@ def masDías(catalog,pais):
     mastrending=max(counted)
     alah=counted.index(mastrending)
     correspondent=used[alah]
-    return correspondent,mastrending
+    for i in range(0,lt.size(catalog["videos"])):
+        if catalog["videos"]["elements"][i]["title"] == correspondent:
+            titulocanal=catalog["videos"]["elements"][i]["channel_title"]
+    return correspondent,mastrending,titulocanal
