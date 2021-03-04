@@ -99,4 +99,21 @@ def sortVideos(catalog, size,tiposort):
         
     return  msegtime,sorted_list
 
-
+def masDías(catalog,pais):
+    used=[]
+    counted=[]
+    videostitulos=[]
+    for i in range(0,lt.size(catalog["videos"])):
+     if catalog["videos"]["elements"][i]["country"] == pais:
+        if  catalog["videos"]["elements"][i]["title"] not in videostitulos:
+              videostitulos.append(catalog["videos"]["elements"][i]["title"])
+    
+    for i in videostitulos:
+     if i not in used:  
+        used.append(i)   
+        trendingdays=videostitulos.count(i)    
+        counted.append(trendingdays)      
+    mastrending=max(counted)
+    alah=counted.index(mastrending)
+    correspondent=used[alah]
+    return correspondent,mastrending
