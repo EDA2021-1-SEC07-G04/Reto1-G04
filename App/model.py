@@ -44,8 +44,8 @@ los mismos.
 # Construccion de modelos
 def CatalNuevo():
     catalog={"videos": None,"categorias":None}
-    catalog["videos"]=lt.newList("ARRAY_LIST")
-    catalog["categorias"]=lt.newList("ARRAY_LIST")
+    catalog["videos"]=lt.newList("LINKED_LIST")
+    catalog["categorias"]=lt.newList("LINKED_LIST")
     return catalog
 
 # Funciones para agregar informacion al catalogo
