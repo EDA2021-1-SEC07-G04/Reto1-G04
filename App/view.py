@@ -71,11 +71,17 @@ while True:
         tiposort=int(input("Indique 1 para shellsort,2 para insertionsort,3 para selectionsort, 4 para mergesort, 5 para quicksort."))
         result=controller.videoSort(catalog,tamaño,tiposort)
         print("mensaje de confirmacion")
+    elif int(inputs[0]) == 4:
+        category_name = input("Indique la categoría del video de mayor tendencia.")
+        result=controller.tendenciaCateg(catalog, category_name)
+        print(result)
+    elif int(inputs[0]) == 5:
+        numero_vids = input("Indique el número de videos a mostrar.")
+        tag = input("Indique un tag a buscar.")
+        pais = input("Indique un país.")
+        #result=controller.likesPaisTag(catalog, category_name)
+      
         
-        print(result[0])
-        #print(result[1]["elements"])
-
-        pass
 
     else:
         sys.exit(0)

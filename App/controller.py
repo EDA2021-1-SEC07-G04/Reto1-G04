@@ -78,3 +78,5 @@ def videoSort(catalog, size,tiposort):
     return model.sortVideos(catalog, size,tiposort)
 
 # Funciones de consulta sobre el catálogo
+def tendenciaCateg(catalog, categ):
+    return model.vidTendenciaCateg(catalog, categ)
