@@ -54,7 +54,7 @@ def loadVideos(catalog):
     referencia al libro que se esta procesando.
     """
     videosfile = cf.data_dir + 'videos-large.csv'
-    input_file = csv.DictReader(open(videosfile, encoding='utf-8'))
+    input_file = csv.DictReader(open("videos-large.csv", encoding='utf-8'))
     for video in input_file:
         model.addVideo(catalog, video)
 
@@ -64,7 +64,7 @@ def loadCategorias(catalog):
     Carga todas las categorias del archivo y las agrega a la lista de categorias
     """
     categfile = cf.data_dir + 'category-id.csv'
-    input_file = csv.DictReader(open(categfile, encoding='utf-8'), delimiter='\t')
+    input_file = csv.DictReader(open('category-id.csv', encoding='utf-8'), delimiter='\t')
     for categ in input_file:
         #print(categ)
         model.addCateg(catalog, categ)
@@ -73,8 +73,10 @@ def loadCategorias(catalog):
 # Funciones de ordenamiento
 def videoSort(catalog, size,tiposort):
     """
-    Ordena los libros por average_rating
+    Ordena los videos
     """
     return model.sortVideos(catalog, size,tiposort)
 
-# Funciones de consulta sobre el catálogo
+# Funciones de consulta sobre el catálogo}
+def trendingVideos(catalog, pais):
+    return model.masDias(catalog, pais)

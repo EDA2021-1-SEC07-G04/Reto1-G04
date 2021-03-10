@@ -78,12 +78,13 @@ while True:
         for i in range(0,len(result[1]["elements"])):
             if result[1]["elements"][i]["country"] == pais and result[1]["elements"][i]["category_id"] == categoriaa:
                 print(result[1]["elements"][i]["trending_date"],result[1]["elements"][i]["title"],result[1]["elements"][i]["channel_title"],result[1]["elements"][i]["publish_time"],result[1]["elements"][i]["views"],result[1]["elements"][i]["likes"],result[1]["elements"][i]["dislikes"])
-        
-        print(result[0])
+    elif int(inputs[0]) == 3:
+      pais=input("seleccione un país a analizar")
+      sorteados=controller.trendingVideos(catalog,pais)
+      print(sorteados)
+       # print(result[0])
        # print(result[1]["elements"][0:2])
        
-
-        pass
 
     else:
         sys.exit(0)
