@@ -70,11 +70,10 @@ while True:
         
     elif int(inputs[0]) == 2:
         tamaño=int(input("Indique el tamaño de la muestra a analizar"))
-        tiposort=int(input("Indique 1 para shellsort,2 para insertionsort,3 para selectionsort"))
+        #tiposort=int(input("Indique 1 para shellsort,2 para insertionsort,3 para selectionsort"))
         pais=input("Introduzca un país a analizar")
         categoriaa=input("Introduzca el ID de una categoría a analizar")
-        result=controller.videoSort(catalog,tamaño,tiposort)
-        print("mensaje de confirmacion")
+        result=controller.videoSort(catalog,tamaño,2)      
         for i in range(0,len(result[1]["elements"])):
             if result[1]["elements"][i]["country"] == pais and result[1]["elements"][i]["category_id"] == categoriaa:
                 print(result[1]["elements"][i]["trending_date"],result[1]["elements"][i]["title"],result[1]["elements"][i]["channel_title"],result[1]["elements"][i]["publish_time"],result[1]["elements"][i]["views"],result[1]["elements"][i]["likes"],result[1]["elements"][i]["dislikes"])
@@ -82,6 +81,19 @@ while True:
       pais=input("seleccione un país a analizar")
       sorteados=controller.trendingVideos(catalog,pais)
       print(sorteados)
+    elif int(inputs[0]) == 4:
+        pass
+    elif int(input[0]) == 5:
+        tamaño=int(input("Indique el tamaño de la muestra a analizar"))
+        pais=input("Introduzca un país a analizar")
+        tagrequest=input("Introduzca un tag a revisar")
+        result2=controller.videoSort(catalog,tamaño,3)
+        for i in range(0,len(result[1]["elements"])):
+            if result2[1]["elements"][i]["country"] == pais and tagrequest  in result2[1]["elements"][i]["tags"] :
+             print( print(result[1]["elements"][i]["tags"],result[1]["elements"][i]["title"],result[1]["elements"][i]["channel_title"],result[1]["elements"][i]["publish_time"],result[1]["elements"][i]["views"],result[1]["elements"][i]["likes"],result[1]["elements"][i]["dislikes"]))
+        
+        
+        
        # print(result[0])
        # print(result[1]["elements"][0:2])
        

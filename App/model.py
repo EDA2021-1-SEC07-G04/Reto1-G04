@@ -79,25 +79,27 @@ def cmpVideosByViews(video1, video2):
   x=False
   return x
 
+def cmpVideosByLikes(video1, video2):
+ x=None
+ if (int(video1['likes']) < int(video2['likes'])):
+  x=True
+  return x 
+ else:
+  x=False
+  return x
 
 
 # Funciones de ordenamiento
-def sortVideos(catalog, size,tiposort):
+def sortVideos(catalog, size,checker):
     sorted_list=[]
     sub_list = lt.subList(catalog['videos'], 0, size)
     sub_list = sub_list.copy()
-    start_time = time.process_time()
-    if tiposort == 1:
+    if checker == 2:
      sorted_list = sa.sort(sub_list, cmpVideosByViews)
-    elif tiposort == 2:
-     sorted_list = insort.sort(sub_list, cmpVideosByViews)
-    elif tiposort == 3:       
-     sorted_list= selsort.sort(sub_list, cmpVideosByViews)
-    stop_time = time.process_time() 
-    msegtime = (stop_time - start_time)*1000
- 
-        
-    return  msegtime,sorted_list
+    else:
+     sorted_list = sa.sort(sub_list, cmpVideosByLikes)    
+             
+    return  sorted_list
 
 def masDias(catalog,pais):
     used=[]
