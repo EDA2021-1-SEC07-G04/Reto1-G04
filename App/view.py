@@ -82,7 +82,9 @@ while True:
       sorteados=controller.trendingVideos(catalog,pais)
       print(sorteados)
     elif int(inputs[0]) == 4:
-        pass
+        category_name = input("Indique la categoría del video de mayor tendencia.")
+        result=controller.tendenciaCateg(catalog, category_name)
+        print(result)
     elif int(input[0]) == 5:
         tamaño=int(input("Indique el tamaño de la muestra a analizar"))
         pais=input("Introduzca un país a analizar")
@@ -91,13 +93,12 @@ while True:
         for i in range(0,len(result[1]["elements"])):
             if result2[1]["elements"][i]["country"] == pais and tagrequest  in result2[1]["elements"][i]["tags"] :
              print( print(result[1]["elements"][i]["tags"],result[1]["elements"][i]["title"],result[1]["elements"][i]["channel_title"],result[1]["elements"][i]["publish_time"],result[1]["elements"][i]["views"],result[1]["elements"][i]["likes"],result[1]["elements"][i]["dislikes"]))
-        
-        
-        
        # print(result[0])
        # print(result[1]["elements"][0:2])
        
-
+        tiposort=int(input("Indique 1 para shellsort,2 para insertionsort,3 para selectionsort, 4 para mergesort, 5 para quicksort."))
+        result=controller.videoSort(catalog,tamaño,tiposort)
+        print("mensaje de confirmacion")
     else:
         sys.exit(0)
 sys.exit(0)

@@ -80,3 +80,6 @@ def videoSort(catalog, size,tiposort):
 # Funciones de consulta sobre el catálogo}
 def trendingVideos(catalog, pais):
     return model.masDias(catalog, pais)
+# Funciones de consulta sobre el catálogo
+def tendenciaCateg(catalog, categ):
+    return model.vidTendenciaCateg(catalog, categ)

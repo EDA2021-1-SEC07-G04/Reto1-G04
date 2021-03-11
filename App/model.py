@@ -31,6 +31,9 @@ from DISClib.ADT import list as lt
 from DISClib.Algorithms.Sorting import shellsort as sa
 from DISClib.Algorithms.Sorting import insertionsort as insort
 from DISClib.Algorithms.Sorting import selectionsort as selsort
+from DISClib.Algorithms.Sorting import mergesort as mrgsort
+from DISClib.Algorithms.Sorting import quicksort as qsort
+
 assert cf
 
 """
@@ -63,9 +66,10 @@ def newCateg(name, id):
     """
     Esta estructura almancena las categorias utilizadas para los videos.
     """
-    categ = {'name': '', 'categ_id': ''}
-    categ['name'] = name
-    categ['categ_id'] = id
+    categ = {}
+    categ[id] = name
+    #categ['name'] = name
+    #categ['categ_id'] = id
     return categ
 # Funciones de consulta
 
@@ -122,3 +126,39 @@ def masDias(catalog,pais):
         if catalog["videos"]["elements"][i]["title"] == correspondent:
             titulocanal=catalog["videos"]["elements"][i]["channel_title"]
     return correspondent,mastrending,titulocanal,pais
+    
+
+def vidTendenciaCateg(catalog, categ):
+    #print(catalog['categorias'])
+    lista_trend = {}
+    lista_dias = []
+    categ_id = hallarID(catalog, categ)
+    info_video = []
+    for x in catalog["videos"]["elements"]:
+        if x["category_id"] == categ_id:
+            if x["video_id"] in lista_trend and x["video_id"] != "#NAME?":
+                lista_trend[x["video_id"]] += 1
+            else:
+                lista_trend[x["video_id"]] = 1
+    for x in lista_trend:
+        lista_dias.append(lista_trend[x])
+    for x in lista_trend:
+        if lista_trend[x] == max(lista_dias):
+            vid_id = x
+    for x in catalog["videos"]["elements"]:
+        if x["video_id"] == vid_id and x["title"] not in info_video:
+            info_video.append(x["title"])
+            info_video.append(x["channel_title"])
+            info_video.append(x["category_id"])
+            info_video.append(max(lista_dias))
+    return info_video
+    
+
+def hallarID(catalog, categ):
+    categ_id = None
+    for x in catalog["categorias"]["elements"]:
+        for id in x:
+            if x[id] == (" "+categ):
+                categ_id = id
+    return categ_id
+    
