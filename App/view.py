@@ -90,7 +90,7 @@ while True:
         pais=input("Introduzca un país a analizar")
         tagrequest=input("Introduzca un tag a revisar")
         result2=controller.videoSort(catalog,tamaño,3)
-        for i in range(0,len(result["elements"])):
+        for i in range(0,len(result2["elements"])):
             if result2["elements"][i]["country"] == pais and tagrequest  in result2["elements"][i]["tags"] :
              print( print(result2["elements"][i]["tags"],result2["elements"][i]["title"],result2["elements"][i]["channel_title"],result2["elements"][i]["publish_time"],result2["elements"][i]["views"],result2["elements"][i]["likes"],result2["elements"][i]["dislikes"]))
        # print(result[0])
